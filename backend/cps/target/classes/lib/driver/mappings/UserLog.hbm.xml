@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="core.classes.UserLog" table="user_log">
+        <id name="logID" type="int">
+            <column name="log_ID" />
+            <generator class="native" />
+        </id>
+        <property name="logSection" type="java.lang.String">
+            <column name="log_section" />
+        </property>
+        <property name="log" type="java.lang.String">
+            <column name="log" />
+        </property>
+        <property name="logDatetime" type="java.lang.String">
+            <column name="log_datetime" />
+        </property>
+        <many-to-one name="logUserID" class="core.classes.User" column="log_user_ID" unique="true" lazy="false" fetch="select"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="core.classes.User" table="user">
+        <id name="userID" type="int">
+            <column name="user_ID" />
+            <generator class="native" />
+        </id>
+        <property name="userName" type="java.lang.String">
+            <column name="user_Name" />
+        </property>
+        <property name="userPassword" type="java.lang.String">
+            <column name="user_Password" />
+        </property>
+        <property name="userTitle" type="java.lang.String">
+            <column name="user_Title" />
+        </property>
+        <property name="userFullName" type="java.lang.String">
+            <column name="user_FullName" />
+        </property>
+        <property name="userNIC" type="java.lang.String">
+            <column name="user_NIC" />
+        </property>
+        <property name="userDOB" type="java.lang.String">
+            <column name="user_DOB" />
+        </property>
+        <property name="userPassport" type="java.lang.String">
+            <column name="user_Passport" />
+        </property>   
+        <property name="userTelephone" type="java.lang.String">
+            <column name="user_Telephone" />
+        </property>
+        <property name="userGender" type="java.lang.Character">
+            <column name="user_Gender" />
+        </property>
+        <property name="userAddress" type="java.lang.String">
+            <column name="user_Address" />
+        </property>   
+        <property name="userMobileNo" type="java.lang.String">
+            <column name="user_MobileNo" />
+        </property>
+        <property name="userEmail" type="java.lang.String">
+            <column name="user_Email" />
+        </property>
+        <property name="userCreateDate" type="java.lang.String">
+            <column name="user_Create_Date" />
+        </property>
+        <property name="userLastUpdateDate" type="java.lang.String">
+            <column name="user_Last_Update_Date" />
+        </property>
+        <many-to-one name="userRoles" class="core.classes.UserRoles" column="user_RoleID" unique="true" lazy="false" fetch="select"/>
+        
+    </class>
+</hibernate-mapping>

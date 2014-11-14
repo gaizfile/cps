@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 30, 2013 3:52:38 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="core.classes.StatWard" table="ward_stat" catalog="cps"  lazy="false" >
+       
+        <id name="ward_stat_ID" type="java.lang.Integer">
+            <column name="ward_stat_ID" />
+            <generator class="native" />
+        </id>  
+		 <property name="ward_year" type="java.lang.Integer">
+            <column name="ward_stat_year"    not-null="false" />
+        </property>
+        
+        <property name="ward_no" type="string">
+            <column name="ward_stat_ward_no"    not-null="false" />
+        </property>
+         <property name="ward_category" type="string">
+            <column name="ward_stat_category"    not-null="false" />
+        </property>
+        <property name="ward_gender" type="java.lang.Character">
+            <column name="ward_stat_gender" length="5" not-null="false" />
+        </property>
+        <property name="ward_beds" type="java.lang.Integer">
+            <column name="ward_stat_beds" not-null="false" />
+        </property>
+
+       
+        <many-to-one name="hospital" class="core.classes.Hospital" fetch="join">
+            <column name="ward_stat_hospital" />
+        </many-to-one>
+
+       
+    </class>
+</hibernate-mapping>

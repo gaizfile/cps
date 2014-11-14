@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 30, 2013 3:52:38 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="core.classes.StatStaff" table="staff_stat" catalog="cps"  lazy="false" >
+       
+        <id name="stat_ID" type="java.lang.Integer">
+            <column name="staff_stat_ID" />
+            <generator class="native" />
+        </id>  
+        
+		 <property name="year" type="java.lang.Integer">
+            <column name="staff_stat_year"    not-null="false" />
+        </property>
+        <property name="mDoctor" type="string">
+            <column name="staff_stat_mDoctor"    not-null="false" />
+        </property>
+         <property name="fDoctor" type="string">
+            <column name="staff_stat_fDoctor"    not-null="false" />
+        </property>
+        <property name="mNurse" type="string">
+            <column name="staff_stat_mNurse" length="5" not-null="true" />
+        </property>
+        <property name="fNurse" type="string">
+            <column name="staff_stat_fNurse" length="5" not-null="true" />
+        </property>
+        <property name="mMLT" type="string">
+            <column name="staff_stat_mMLT"   not-null="false" />
+        </property>
+        <property name="fMLT" type="string">
+            <column name="staff_stat_fMLT"   not-null="false" />
+        </property>
+        <property name="mCheif_Pharmasist" type="string">
+            <column name="staff_stat_mCheif_Pharmasist"   not-null="false" />
+        </property>
+        <property name="fCheif_Pharmasist" type="string">
+            <column name="staff_stat_fCheif_Pharmasist"   not-null="false" />
+        </property>
+         <property name="mAssistant_Pharmasist" type="string">
+            <column name="staff_stat_mAsst_Pharmasist"  not-null="false" />
+        </property>
+        <property name="fAssistant_Pharmasist" type="string">
+            <column name="staff_stat_fAsst_Pharmasist"  not-null="false" />
+        </property>
+       
+        <many-to-one name="hospital" class="core.classes.Hospital" fetch="join">
+            <column name="staff_stat_hospital" />
+        </many-to-one>
+
+       
+    </class>
+</hibernate-mapping>

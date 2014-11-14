@@ -1,0 +1,31 @@
+Udara & Nirasha
+//Add New Patient
+http://localhost:8080/cps/api/patient/newPatient
+http://localhost:8080/cps/api/patient/getPatientsByHIN/901871310v
+http://localhost:8080/cps/api/patient/updatePatient
+
+
+Ashani
+//Get Staff Details from HIS Backend
+http://localhost:8080/HIS_API/rest/statistics/getStaffStats
+http://localhost:8080/HIS_API/rest/statistics/getWardStats
+http://localhost:8080/cps/api/stats/run
+
+
+
+Gayan
+http://localhost:8080/HIS_API/rest/external/requestExternalPatient/839133345v
+
+
+
+
+
+
+Nirasha ESB
+localhost:8080/cps/api/HospitalService/getAllHospitals
+localhost:8080/cps/api/stats/getDistributionOfSpecialists
+localhost:8080/cps/api/stats/geWardBeds
+localhost:8080/cps/api/UserService/getAllUsers
+localhost:8080/cps/api/UserService/getAllUserRoles
+
+

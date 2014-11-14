@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 26, 2013 10:32:19 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="core.classes.Allergy" table="patient_allergy" catalog="cps">
+    
+        <id name="allergyID" type="int">
+            <column name="allergy_ID" />
+            <generator class="native" />
+        </id>
+        
+        <many-to-one name="patient" class="core.classes.Patient" fetch="join">
+            <column name="patient_ID" />
+        </many-to-one>
+                
+        <property name="allergyName" type="java.lang.String">
+            <column name="allergy_Name" />
+        </property>
+        <property name="allergyStatus" type="java.lang.String">
+            <column name="allergy_Status" />
+        </property>
+        <property name="allergyRemarks" type="java.lang.String">
+            <column name="allergy_Remarks" />
+        </property>        
+        <property name="allergyActive" type="int">
+            <column name="allergy_Active" />
+        </property>
+        
+        
+    </class>
+</hibernate-mapping>
